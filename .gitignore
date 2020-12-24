@@ -1,3 +1,7 @@
+# project specific
+assets/
+
+# generic node .gitignore
 # Logs
 logs
 *.log
