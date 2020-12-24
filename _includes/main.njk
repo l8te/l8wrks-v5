@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>
+			{{ metadata.title }}
+		</title>
+	</head>
+	<body>
+		<nav>
+			<!-- is not getting anything -->
+			{% set navPages = collections.all | eleventyNavigation %}
+			{{ navPages | dump | safe }}
+		</nav>
+		<!-- this is working -->
+		<main>
+			<h1>{{ title }}</h1>
+			<p>
+				{{ content | safe }}
+			</p>
+		</main>
+	</body>
+</html>
+
+<!-- 
+remember that non index pages w/out permalinks will be created in a sub-directory
+this is fine, just watch out for it
+ -->
+
+ 		
