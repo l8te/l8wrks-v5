@@ -1,23 +1,36 @@
 <html>
-	<head>
-		<title>
-			{{ metadata.title }}
-		</title>
-	</head>
-	<body>
-		<nav>
-			<!-- is not getting anything -->
-			{% set navPages = collections.all | eleventyNavigation %}
-			{{ navPages | dump | safe }}
-		</nav>
-		<!-- this is working -->
-		<main>
-			<h1>{{ title }}</h1>
-			<p>
-				{{ content | safe }}
-			</p>
-		</main>
-	</body>
+    <head>
+        <title>
+            {{ metadata.title }}
+        </title>
+    </head>
+    <body>
+        <nav>
+            <!-- is not getting anything -->
+            {% set navPages = collections.all | eleventyNavigation %}
+            {{ navPages | dump | safe }}
+            {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+        </nav>
+
+        <!-- this is working -->
+        <main>
+            <h1>{{ title }}</h1>
+            <p>
+                {{ content | safe }}
+            </p>
+            <ul>
+            <!-- but this works -->
+            {%- for post in collections.all -%}
+              <li><a href="{{ post.url }}">{{ post.url }}</a></li>
+            {%- endfor -%}
+            </ul>
+            <ul>
+            {%- for page in collections.page -%}
+              <li>{{ page.data.title }}</li>
+            {%- endfor -%}
+            </ul>
+        </main>
+    </body>
 </html>
 
 <!-- 
@@ -25,4 +38,4 @@ remember that non index pages w/out permalinks will be created in a sub-director
 this is fine, just watch out for it
  -->
 
- 		
+         

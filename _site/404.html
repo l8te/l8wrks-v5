@@ -1,26 +1,32 @@
 <html>
-	<head>
-		<title>
-			l8wrks
-		</title>
-	</head>
-	<body>
-		<nav>
-			<!-- is not getting anything -->
-			
-			[]
-		</nav>
-		<!-- this is working -->
-		<main>
-			<h1>404</h1>
-			<p>
-				<h1>Whoops</h1>
+    <head>
+        <title>
+            l8wrks
+        </title>
+    </head>
+    <body>
+        <nav>
+            <!-- is not getting anything -->
+            
+            [{"key":"home","url":"/","pluginType":"eleventy-navigation","title":"home","children":[]},{"key":"work","url":"/work/","pluginType":"eleventy-navigation","title":"work","children":[]}]
+            <ul><li><a href="/">home</a></li>
+<li><a href="/work/">work</a></li></ul>
+        </nav>
+
+        <!-- this is working -->
+        <main>
+            <h1>404</h1>
+            <p>
+                <h1>Whoops</h1>
 <p>Nothing is here.</p>
 <p>There will be a link here to take you back to something that exists.</p>
 
-			</p>
-		</main>
-	</body>
+            </p>
+            <ul>
+            <!-- but this works --><li><a href="/">/</a></li><li><a href="/404.html">/404.html</a></li><li><a href="/work/">/work/</a></li></ul>
+            <ul><li>index</li><li>work</li></ul>
+        </main>
+    </body>
 </html>
 
 <!-- 
@@ -28,4 +34,4 @@ remember that non index pages w/out permalinks will be created in a sub-director
 this is fine, just watch out for it
  -->
 
- 		
+         

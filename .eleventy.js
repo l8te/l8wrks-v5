@@ -1,17 +1,15 @@
 const fs = require("fs");
 
+// was not working bc of tabs vs spaces
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
-  // remember to add css passthrough once we have some
-
   // Output directory: _site
   // Copy `assets/` to `_site/assets`
   eleventyConfig.addPassthroughCopy("assets");
-
 
   // 404 page config
   eleventyConfig.setBrowserSyncConfig({
