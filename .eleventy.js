@@ -8,8 +8,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   // Output directory: _site
-  // Copy `assets/` to `_site/assets`
-  eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("work");
+  // let's figure out how to handle where images go later
+  // eleventyConfig.addPassthroughCopy({"assets": "work"});
+
 
   // 404 page config
   eleventyConfig.setBrowserSyncConfig({

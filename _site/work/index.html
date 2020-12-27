@@ -6,23 +6,44 @@
     </head>
     <body>
         <nav>
-            <!-- is not getting anything -->
+            <!-- <ul><li><a href="/work/first-item/">item</a></li>
+<li><a href="/">home</a></li>
+<li><a href="/work/">work</a></li>
+<li><a href="/about/">about</a></li></ul> -->
             
-            [{"key":"home","url":"/","pluginType":"eleventy-navigation","title":"home","children":[]},{"key":"work","url":"/work/","pluginType":"eleventy-navigation","title":"work","children":[]}]
-            <ul><li><a href="/">home</a></li>
-<li><a href="/work/">work</a></li></ul>
+            <ul>
+              <li>
+                <a href="/work/first-item/">item</a>
+              </li>
+              <li>
+                <a href="/">home</a>
+              </li>
+              <li class="my-active-class">
+                <a href="/work/">work</a>
+              </li>
+              <li>
+                <a href="/about/">about</a>
+              </li>
+            </ul>
         </nav>
 
         <!-- this is working -->
         <main>
             <h1>work</h1>
             <p>
-                <p>Rebar-ware garage katana nodality A.I. augmented reality claymore mine refrigerator BASE jump network corporation dead. Urban vinyl assassin hacker math-table euro-pop range-rover. Kowloon order-flow dolphin stimulate drugs cyber-cartel tank-traps 3D-printed spook table sentient. Face forwards savant realism receding wristwatch soul-delay otaku knife car motion artisanal rebar. Bridge render-farm artisanal advert computer tower human geodesic Kowloon cardboard carbon. Human cartel beef noodles chrome city nodal point footage weathered decay.</p>
+                
+<p style="color: red;">
+    unclear as to why this isn't working without the inclusion of the content | safe tag when the item template works fine
+</p>
 
+<p>
+    <p>Rebar-ware garage katana nodality A.I. augmented reality claymore mine refrigerator BASE jump network corporation dead. Urban vinyl assassin hacker math-table euro-pop range-rover. Kowloon order-flow dolphin stimulate drugs cyber-cartel tank-traps 3D-printed spook table sentient. Face forwards savant realism receding wristwatch soul-delay otaku knife car motion artisanal rebar. Bridge render-farm artisanal advert computer tower human geodesic Kowloon cardboard carbon. Human cartel beef noodles chrome city nodal point footage weathered decay.</p>
+
+</p>
             </p>
-            <ul>
-            <!-- but this works --><li><a href="/">/</a></li><li><a href="/404.html">/404.html</a></li><li><a href="/work/">/work/</a></li></ul>
-            <ul><li>index</li><li>work</li></ul>
+            <hr>
+            <p>for testing purposes</p>
+            <ul><li><a href="/">/</a></li><li><a href="/404.html">/404.html</a></li><li><a href="/work/">/work/</a></li><li><a href="/about/">/about/</a></li><li><a href="/work/first-item/">/work/first-item/</a></li></ul>
         </main>
     </body>
 </html>

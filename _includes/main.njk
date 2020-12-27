@@ -6,10 +6,15 @@
     </head>
     <body>
         <nav>
-            <!-- is not getting anything -->
+            <!-- {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }} -->
             {% set navPages = collections.all | eleventyNavigation %}
-            {{ navPages | dump | safe }}
-            {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+            <ul>
+            {%- for entry in navPages %}
+              <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
+                <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+              </li>
+            {%- endfor %}
+            </ul>
         </nav>
 
         <!-- this is working -->
@@ -18,15 +23,11 @@
             <p>
                 {{ content | safe }}
             </p>
+            <hr>
+            <p>for testing purposes</p>
             <ul>
-            <!-- but this works -->
             {%- for post in collections.all -%}
               <li><a href="{{ post.url }}">{{ post.url }}</a></li>
-            {%- endfor -%}
-            </ul>
-            <ul>
-            {%- for page in collections.page -%}
-              <li>{{ page.data.title }}</li>
             {%- endfor -%}
             </ul>
         </main>
